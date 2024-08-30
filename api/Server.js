@@ -10,6 +10,7 @@ const port = 3000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(cors)
 app.use(cors({
     origin: 'https://govt-alert-main.vercel.app', // Replace with your frontend URL
     methods: ['GET', 'POST', 'OPTIONS'],
