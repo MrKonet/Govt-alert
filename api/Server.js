@@ -14,7 +14,6 @@ app.use(cors({
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-app.use(cors());
 
 // MongoDB URI and database name
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@govt-alert-cluster.z57vv.mongodb.net/`;
