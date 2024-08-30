@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GovtAlert | Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- link to google icons -->
+    <link rel="stylesheet" 
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script> -->
+
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="logo">
+            <img src="./images/logo2.png" alt="GovAlert Logo" class="logo-img">
+            GovtAlert 
+        </div>
+
+        <span class="material-symbols-outlined hamburger-icon">
+            menu
+        </span>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="signup.html">
+                     <button class="signup-btn">Sign Up</button>
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Signup Split Section -->
+    <section class="signup-section">
+        <div class="signup-left">
+            <h2>Join Our Newsletter</h2>
+            <div>
+                <p>
+                    Sign up to get the latest updates on government job openings directly in your inbox for Free. 
+                    Please carefully fill in the form to ensure accuracy, and you will be the first to know of any recruitment.
+                    Enter A secured 4 digit Pin You Will Always Remember
+                </p>
+                
+            </div>
+        </div>
+        <div class="signup-right">
+            <form class="signup-form" id="signupForm">
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <select id="educationLevel" name="education" required>
+                    <option value="" disabled selected>Current Education Level</option>
+                    <option value="S.S.C.E">S.S.C.E</option>
+                    <option value="Undergraduate">Undergraduate</option>
+                    <option value="Postgraduate">Postgraduate</option>
+                </select>
+                <input type="text" id="pin" name="pin" maxlength="4" placeholder="Enter a 4-digit PIN" required>
+                <p class="pin-message"></p>
+                <button type="submit" class="submit-btn" id="subscribeBtn" disabled>Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer with Contact Us -->
+    <footer>
+        <p>Contact us at <a href="mailto:contact@govalert.com">contact@govalert.com</a></p>
+    </footer>
+
+   <script>
+    console.log("ran")
+   var enteredPins = [];
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const pinInput = document.getElementById('pin');
+        const pinMessage = document.querySelector('.pin-message');
+        const subscribeBtn = document.querySelector('button[type="submit"]');
+    
+        pinInput.addEventListener('input', function () {
+            const pin = pinInput.value.trim();
+    
+            // Check if input is a 4-digit number
+            if (pin.length === 4 && /^[0-9]{4}$/.test(pin)) {
+                if (enteredPins.includes(pin)) {
+                    pinMessage.textContent = 'This PIN has already been used. Please try a different one.';
+                    pinMessage.style.color = 'red';
+                    pinInput.style.borderColor = 'red';
+                } else if (enteredPins.length < 2) {
+                    enteredPins.push(pin);
+                    pinMessage.textContent = 'Please try a different PIN.';
+                    pinMessage.style.color = 'orange';
+                    pinInput.style.borderColor = 'orange';
+                    pinInput.value = '';
+                } else if (enteredPins.length === 2) {
+                    enteredPins.push(pin);
+                    pinMessage.textContent = 'Approved!';
+                    pinMessage.style.color = 'green';
+                    pinInput.style.borderColor = 'green';
+                    pinInput.disabled = true;
+                    subscribeBtn.disabled = false;
+                }
+            } else {
+                pinMessage.textContent = 'Please enter a valid 4-digit number.';
+                pinMessage.style.color = 'red';
+                pinInput.style.borderColor = 'red';
+            }
+        });
+    });
+    
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log("seeing the data");
+        const fullname = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const educationLevel = document.getElementById('educationLevel').value;
+    
+        try {
+            console.log("this ran successfully")
+            const response = await fetch('gov-alert.vercel.app/addParticipant', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: fullname,
+                    email: email,
+                    educationLevel: educationLevel,
+                    pins: enteredPins
+                }),
+            });
+    
+            if (response.ok) {
+                // alert('Signup successful!');
+                document.getElementById('signupForm').reset();
+                resetPins();
+            } else {
+                alert('Failed to submit data.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error submitting data.');
+        }
+    });
+    
+    function resetPins() {
+        enteredPins = [];
+        document.getElementById('pin').disabled = false;
+        document.querySelector('button[type="submit"]').disabled = true;
+    }
+    </script>
+</body>
+</html>

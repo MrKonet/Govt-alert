@@ -1,0 +1,471 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Sticky Header */
+.sticky-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px !important;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.sticky-header .logo {
+    font-family:'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+/* Styling for the logo section */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Logo image styling */
+.logo-img {
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 8px; /* Space between the logo image and the text */
+}
+
+
+
+.sticky-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sticky-header nav a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Styling for the hamburger icon */
+.sticky-header .hamburger-icon {
+    display: none;
+    font-size: 36px;
+}
+
+.signup-btn {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: darkgreen;
+}
+
+/* Main Content with Background Image */
+/* Main Content with Background Image */
+.main-content {
+    position: relative;
+    height: calc(100vh - 60px); /* Full height minus header height */
+    overflow: hidden;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 0% 0%;
+    background-repeat: no-repeat; /* Ensures no repeat of the background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./images/BG2.jpg");
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.507); /* Transparent grey overlay */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%; /* Ensures overlay covers the entire section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.overlay h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.overlay p {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Buttons */
+.buttons {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid green;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.stroke-btn {
+    background-color: transparent;
+    color: green;
+}
+
+.fill-btn {
+    background-color: green;
+    color: white;
+}
+
+.fill-btn:hover {
+    background-color: darkgreen;
+}
+
+.stroke-btn:hover {
+    background-color: green;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+
+
+/* Signup Section */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.signup-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.signup-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.signup-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #7a7a7a;
+}
+
+/* Signup Form */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Sticky Header */
+.sticky-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.signup-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Split Signup Section */
+.signup-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Split Signup Section */
+.signup-section {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left side */
+.signup-left {
+    flex: 1;
+    background-color: #28a745; /* Green color */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 30%;
+}
+
+.signup-left h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.signup-left div {
+    display: flex;
+    justify-content: center;
+}
+.signup-left p {
+    color: #f1eeee;
+    font-size: 18px;
+    text-align: center;
+    width: 70%;
+}
+
+/* Form Section */
+.signup-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+.signup-form {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-form input,
+.signup-form select {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+    border-color: #007bff;
+}
+
+.submit-btn {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pin-message {
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    color: red;
+    min-height: 20px; /* Space reserved for feedback */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+
+
+
+
+/* About Section */
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 60px); /* Adjusting for header */
+}
+
+.about-content {
+    max-width: 800px;
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #28a745; /* Consistent with the signup page green */
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* adding responsiveness to the pages */
+@media screen and ( max-width: 900px ) {
+    .sticky-header .hamburger-icon {
+        display: block;
+        font-size: 36px;
+    }
+    .sticky-header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .sticky-header nav {
+        display: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .sticky-header nav.display-visible {
+        display: block;
+    }
+
+    .signup-section {
+        flex-direction: column;
+    }
+    .signup-left, .signup-right {
+        width: 100%;
+    }
+    .signup-left p {
+        font-size: 14px;
+        width: 100%;
+    }
+}
