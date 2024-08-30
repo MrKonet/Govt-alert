@@ -36,6 +36,9 @@ app.post('/addParticipant', async (req, res) => {
         await client.close();
     }
 });
+app.get('/', (req, res) => {
+    res.send('Hello, this is the text you requested!');
+  });
 
 app.listen(process.env.PORT || 3000);
 
