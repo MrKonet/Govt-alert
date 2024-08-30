@@ -37,7 +37,14 @@ app.post('/addParticipant', async (req, res) => {
     }
 });
 app.get('/', (req, res) => {
-    res.send('Hello, this is the text you requested!');
+    res.json({
+        message: 'Hello, this is the JSON output from the home page!',
+        status: 'success',
+        data: {
+          key1: 'value1',
+          key2: 'value2'
+        }
+      });
   });
 
 app.listen(process.env.PORT || 3000);
