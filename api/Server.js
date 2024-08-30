@@ -7,7 +7,7 @@ const port = 3000;
 
 // Initialize CORS middleware
 app.use(cors({
-    origin: 'https://gov-alert.vercel.app/signup.html', // Replace with your frontend URL
+    origin: 'https://gov-alert.vercel.app', // Replace with your frontend URL
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials:true
   }));
