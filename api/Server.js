@@ -6,15 +6,15 @@ const app = express();
 const port = 3000;
 
 // Initialize CORS middleware
+
+
+// Middleware to parse JSON bodies
+app.use(express.json());
 app.use(cors({
     origin: 'https://govt-alert-main.vercel.app', // Replace with your frontend URL
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials:true
   }));
-
-// Middleware to parse JSON bodies
-app.use(express.json());
-
 // MongoDB URI and database name
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@govt-alert-cluster.z57vv.mongodb.net/`;
 const client = new MongoClient(uri);
