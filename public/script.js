@@ -45,7 +45,7 @@ document.getElementById('signupForm').addEventListener('submit', async (e) => {
 
     try {
         console.log("this ran successfully")
-        const response = await fetch('http://localhost:3000/addParticipant', {
+        const response = await fetch('https://govt-alert.onrender.com/addParticipant', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
